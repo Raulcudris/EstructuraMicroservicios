@@ -1,11 +1,10 @@
 server:
   port: 8080
 
-
 spring:
   config:
     import: optional:configserver:http://localhost:8888
-    
+
   application:
     name: msvc-gateway
   cloud:
@@ -15,11 +14,10 @@ spring:
           enable: true
       routes:
         - id: students
-          uri: http://localhost:8090
+          uri: http://localhost:7090
           predicates:
             - Path=/api/student/**
         - id: courses
           uri: http://localhost:9090
           predicates:
             - Path=/api/course/**
-
