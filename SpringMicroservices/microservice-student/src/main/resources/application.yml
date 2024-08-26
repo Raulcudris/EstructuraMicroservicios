@@ -1,7 +1,6 @@
 server:
   port: 8090
 
-
 spring:
   application:
     name: msvc-student
@@ -9,15 +8,14 @@ spring:
     import: optional:configserver:http://localhost:8888
 
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/Student
+    url: jdbc:mysql://localhost:3306/school
     username: admin
     password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
-      ddl-auto: create
-    database: mysql
-    database-platform: org.hibernate.dialect.MySqQL8Dialect
+      ddl-auto: update
+    #show-sql: true
 
 eureka:
   instance:
